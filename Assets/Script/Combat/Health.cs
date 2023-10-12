@@ -1,25 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 
 namespace RPG.Combat
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] private float health = 100f;
+        [SerializeField] private float healthPoints = 100f;
+        
+        private bool isDeath = false;
+
+        public bool IsDeath()
+        {
+           return isDeath;
+        }
+
 
         public void TakeDamage(float damage)
         {
-            health = Mathf.Max(health - damage, 0);
-            Debug.Log("Take damage, curren health = " + health);
+            healthPoints = Mathf.Max(healthPoints - damage, 0);
+            if(healthPoints == 0)
+            {
+                Death();
+            }
+
         }
 
-        public float GetHealth()
+        private void Death()
         {
-            return health;
+            if (isDeath) return;
+
+            GetComponent<Animator>().SetTrigger("Death");
+            isDeath = true;
         }
 
+        
     }
 }
 
