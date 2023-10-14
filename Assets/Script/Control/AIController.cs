@@ -13,7 +13,7 @@ namespace RPG.Control
         private Fighter fighter;
         private Health healthTarget;
 
-        private void Start()
+        private void Awake()
         {
             player = GameObject.FindGameObjectWithTag("Player");
             fighter = GetComponent<Fighter>();
@@ -40,6 +40,20 @@ namespace RPG.Control
         {
             float distance = Vector3.Distance(player.transform.position, transform.position);
             return distance < chasingDistance;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, chasingDistance);
+
+            //Gizmos.DrawSphere(transform.position, chasingDistance);
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            //Gizmos.DrawLine(transform.position, player.transform.position);
         }
     }
 }
