@@ -5,12 +5,11 @@ using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
 
-namespace RPG.Combat
+namespace RPG.Core
 {
     public class Health : MonoBehaviour
     {
         [SerializeField] private float healthPoints = 100f;
-        
         private bool isDeath = false;
 
         public bool IsDeath()
@@ -34,6 +33,7 @@ namespace RPG.Combat
             if (isDeath) return;
 
             GetComponent<Animator>().SetTrigger("Death");
+            GetComponent<ActionScheduler>().CancelCurrentAction();
             isDeath = true;
         }
 

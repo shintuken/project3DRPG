@@ -4,33 +4,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
-
+using RPG.Core;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        private Health healthTarget;
+
+        private void Start()
+        {
+            healthTarget = GetComponent<Health>();
+        }
+
         // Update is called once per frame
         void Update()
         {
+            if (healthTarget.IsDeath()) return;
             if(InteractWithCombat()) return;
             if(InteractWithMovement()) return;
             Debug.Log("Out of world map!");
         }
 
         private bool InteractWithCombat()
-        {
+        {         
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             foreach (RaycastHit hit in hits)
             {
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if (!GetComponent<Fighter>().CanAttack(target))
+                if(target == null) continue;
+
+                if (!GetComponent<Fighter>().CanAttack(target.gameObject))
                 {
                     continue;
                 }
                 if (Input.GetMouseButtonDown(1))
                 {
-                    GetComponent<Fighter>().Attack(target);
+                    GetComponent<Fighter>().Attack(target.gameObject);
                 }
 
                 return true;

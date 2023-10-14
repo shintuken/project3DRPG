@@ -15,7 +15,8 @@ namespace RPG.Combat
 
         //Không cần dùng transform mà dùng trực tiếp Health để sử dụng 
         Health target;
-        float timeSinceLastAttack = 0;
+        //Set infinity so when start object will attack immediately without waitting time
+        float timeSinceLastAttack = Mathf.Infinity;
 
 
         private void Update()
@@ -25,7 +26,7 @@ namespace RPG.Combat
             if (target == null) return;
             //Target already death
             if (target.IsDeath()) return;
-            //Move to combatTarget range
+            //Move to target range
             if (!GetInRange())
             {
                 GetComponent<Mover>().MoveTo(target.transform.position);
@@ -38,10 +39,10 @@ namespace RPG.Combat
             }
         }
 
-        public bool CanAttack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject target)
         {
-            if (combatTarget == null) return false;
-            Health testTarget = combatTarget.GetComponent<Health>();
+            if (target == null) return false;
+            Health testTarget = target.GetComponent<Health>();
             return (testTarget != null && !testTarget.IsDeath());
         }
 
@@ -50,9 +51,9 @@ namespace RPG.Combat
             //Look at enemy 
             transform.LookAt(target.transform);
 
-
             if (timeSinceLastAttack > timeBetweenAttack)
             {
+                //this will trigger HIT() event
                 TriggerAttack();
                 timeSinceLastAttack = 0f;
             }
@@ -72,10 +73,10 @@ namespace RPG.Combat
         {
             if(target != null)
             {
-                //Damage on combatTarget
+                //Damage on target
                 target.TakeDamage(weaponDamage);
                 //Shake camera 
-                CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1);
+                CameraShaker.Instance.ShakeOnce(3f, 3f, .1f, 1);
             }    
         }
 
@@ -84,11 +85,11 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.transform.position) < attackRange;
         }
 
-        public void Attack(CombatTarget CombatTarget)
+        public void Attack(GameObject Target)
         {
-            //this will trigger hit event
+
             GetComponent<ActionScheduler>().StartAction(this);
-            target = CombatTarget.GetComponent<Health>();
+            target = Target.GetComponent<Health>();
         }
 
         public void Cancel()

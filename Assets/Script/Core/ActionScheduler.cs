@@ -22,6 +22,11 @@ namespace RPG.Core
             //Set new currtent action after player change behaviour 
             currentAction = action;
         }
+
+        public void CancelCurrentAction()
+        {
+            StartAction(null);
+        }
     }
 }
 
