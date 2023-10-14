@@ -3,21 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Combat;
 using RPG.Core;
+using RPG.Movement;
 
 namespace RPG.Control
 {
     public class AIController : MonoBehaviour
     {
         [SerializeField] private float chasingDistance = 3f;
-        private GameObject player;
-        private Fighter fighter;
-        private Health healthTarget;
+        [SerializeField] private float supiciousTime = 5f;
 
-        private void Awake()
+        private GameObject player;
+
+        private Fighter fighter;
+        private Mover mover;
+
+        private Health healthTarget;
+        private Vector3 guardPosition;
+
+        [SerializeField] private float timeSinceLastedSawPlayer = Mathf.Infinity;
+
+
+        private void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player");
             fighter = GetComponent<Fighter>();
+            mover = GetComponent<Mover>();  
             healthTarget = GetComponent<Health>();
+            guardPosition =  this.transform.position;
         }
 
         // Update is called once per frame
@@ -26,13 +38,37 @@ namespace RPG.Control
             if (healthTarget.IsDeath()) return;
             if (InRangeAttackOfPlayer() && fighter.CanAttack(player))
             {
-                fighter.Attack(player);
+                timeSinceLastedSawPlayer = 0f;
+                AttackBehaviour();
+            }
+            else if (timeSinceLastedSawPlayer < supiciousTime)
+            {
+                SupicionBehaviour();
             }
             else
             {
-                //Cancel attack when out of range
-                fighter.Cancel();
+                GuardBehaviour();
             }
+
+            timeSinceLastedSawPlayer += Time.deltaTime;
+        }
+
+        private void GuardBehaviour()
+        {
+            //cancel attack and move to guard position
+            mover.StartMoveAction(guardPosition);
+        }
+
+        private void SupicionBehaviour()
+        {
+            //Supicious State - Wait in there to think where you go
+            //Cancel any action doing now
+            GetComponent<ActionScheduler>().CancelCurrentAction();
+        }
+
+        private void AttackBehaviour()
+        {
+            fighter.Attack(player);
         }
 
         //CHeck range attack enemy 
@@ -50,11 +86,6 @@ namespace RPG.Control
             //Gizmos.DrawSphere(transform.position, chasingDistance);
         }
 
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            //Gizmos.DrawLine(transform.position, player.transform.position);
-        }
     }
 }
 
