@@ -78,10 +78,13 @@ PrefabInstance:
       propertyPath: attackRange
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 3801110445501176499, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: healthPoints
       value: 20
       objectReference: {fileID: 0}
+=======
+>>>>>>> 0a9188fbc3545f072696a89525de326ca9de98d3
     - target: {fileID: 5339816490277443818, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: health
       value: 15
@@ -104,7 +107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 0
+=======
+      value: 6
+>>>>>>> 0a9188fbc3545f072696a89525de326ca9de98d3
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,9 +193,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chasingDistance: 5.14
+<<<<<<< HEAD
   patrolPath: {fileID: 0}
   supiciousTime: 3
   dwellingTimeMax: 3
+=======
+  supiciousTime: 3
+>>>>>>> 0a9188fbc3545f072696a89525de326ca9de98d3
 --- !u!114 &-1159982517615870906
 MonoBehaviour:
   m_ObjectHideFlags: 0

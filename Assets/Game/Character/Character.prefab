@@ -13,10 +13,17 @@ GameObject:
   - component: {fileID: 7439813240935739121}
   - component: {fileID: 7332457655094390552}
   - component: {fileID: 8574460451648612376}
+<<<<<<< HEAD
   - component: {fileID: 7933821964191904398}
   - component: {fileID: 5957853190724003534}
   - component: {fileID: -6051859471410470442}
   - component: {fileID: 3801110445501176499}
+=======
+  - component: {fileID: 5339816490277443818}
+  - component: {fileID: 7933821964191904398}
+  - component: {fileID: 5957853190724003534}
+  - component: {fileID: -6051859471410470442}
+>>>>>>> 0a9188fbc3545f072696a89525de326ca9de98d3
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -139,6 +146,22 @@ MonoBehaviour:
   attackRange: 2
   timeBetweenAttack: 2
   weaponDamage: 5
+<<<<<<< HEAD
+=======
+--- !u!114 &5339816490277443818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7193436131083894672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c68ee2c947ee64eafbe852348dc8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 100
+>>>>>>> 0a9188fbc3545f072696a89525de326ca9de98d3
 --- !u!114 &7933821964191904398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +201,7 @@ MonoBehaviour:
   attackRange: 2
   timeBetweenAttack: 2
   weaponDamage: 5
+<<<<<<< HEAD
 --- !u!114 &3801110445501176499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,3 +215,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 100
+=======
+>>>>>>> 0a9188fbc3545f072696a89525de326ca9de98d3
