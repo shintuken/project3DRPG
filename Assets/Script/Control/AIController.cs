@@ -4,6 +4,8 @@ using UnityEngine;
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
+using System.Threading;
+using System;
 
 namespace RPG.Control
 {
@@ -19,6 +21,11 @@ namespace RPG.Control
 
         private Health healthTarget;
         private Vector3 guardPosition;
+
+        [SerializeField] private PatrolPath patrolPath; 
+        private int currentPatrolPoint = 0;
+        [SerializeField] private float PatrolRadiusAccept = 2f;
+
 
         [SerializeField] private float timeSinceLastedSawPlayer = Mathf.Infinity;
 
@@ -56,7 +63,29 @@ namespace RPG.Control
         private void GuardBehaviour()
         {
             //cancel attack and move to guard position
+            if (patrolPath == null) return;
+            if (IsInPatrolPosition())
+            {
+                CyclePosition();
+            }
+            guardPosition = GetCurrentState();
             mover.StartMoveAction(guardPosition);
+
+        }
+
+        private Vector3 GetCurrentState()
+        {
+           return patrolPath.GetPointPosition(currentPatrolPoint);
+        }
+
+        private void CyclePosition()
+        {
+            currentPatrolPoint = patrolPath.CyclePoint(currentPatrolPoint);
+        }
+
+        private bool IsInPatrolPosition()
+        {
+            return Vector3.Distance(transform.position, GetCurrentState()) < PatrolRadiusAccept;
         }
 
         private void SupicionBehaviour()
