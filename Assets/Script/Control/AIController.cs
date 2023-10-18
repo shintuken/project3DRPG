@@ -4,44 +4,25 @@ using UnityEngine;
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
-using System;
 
 namespace RPG.Control
 {
     public class AIController : MonoBehaviour
     {
-        //Chasing distance 
         [SerializeField] private float chasingDistance = 3f;
+        [SerializeField] private float supiciousTime = 5f;
 
-        //Patrol Class
-        [SerializeField] private PatrolPath patrolPath;
-
-        //Player
         private GameObject player;
 
-        //Fighter and Mover
         private Fighter fighter;
         private Mover mover;
 
-        //Enemy health
         private Health healthTarget;
-        
-        //Enemy guard position
         private Vector3 guardPosition;
 
-        //Time wait when Player out of range chasing
-        [SerializeField] private float supiciousTime = 5f;
-        private float timeSinceLastedSawPlayer = Mathf.Infinity;
+        [SerializeField] private float timeSinceLastedSawPlayer = Mathf.Infinity;
 
-        //Time watting at each patrol point
-        [SerializeField] private float dwellingTimeMax = 3f;
-        private float dwellingTime = Mathf.Infinity;
-        
-        //Minium distance between Enemy and Patrol point that Enemy begin to patrol
-        private float wayPointTolerance = 1f;
 
-        //Current Patrol Point
-        private int currentWayPointIndex = 0;
         private void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player");
@@ -66,53 +47,16 @@ namespace RPG.Control
             }
             else
             {
-                PatrolBehaviour();
+                GuardBehaviour();
             }
 
-            UpdateTimers();
-        }
-
-        private void UpdateTimers()
-        {
-            dwellingTime += Time.deltaTime;
             timeSinceLastedSawPlayer += Time.deltaTime;
         }
 
-        private void PatrolBehaviour()
+        private void GuardBehaviour()
         {
-            Vector3 nextPosition = guardPosition;
-
-            if(patrolPath != null)
-            {
-                if (AtWayPoint())
-                {
-                    dwellingTime = 0f;
-                    CycleWayPoint();
-                }
-                nextPosition = GetCurrentWayPoint();
-
-            }
-            if (dwellingTime > dwellingTimeMax)
-            {
-                mover.StartMoveAction(nextPosition);            
-            }
-            
-        }
-
-        private Vector3 GetCurrentWayPoint()
-        {
-            return patrolPath.GetWayPoint(currentWayPointIndex);
-        }
-
-        private void CycleWayPoint()
-        {
-          currentWayPointIndex = patrolPath.GetNextIndex(currentWayPointIndex);
-        }
-
-        private bool AtWayPoint()
-        {
-            float distanceToWayPoint = Vector3.Distance(transform.position, GetCurrentWayPoint());
-            return distanceToWayPoint < wayPointTolerance; 
+            //cancel attack and move to guard position
+            mover.StartMoveAction(guardPosition);
         }
 
         private void SupicionBehaviour()
@@ -134,7 +78,6 @@ namespace RPG.Control
             return distance < chasingDistance;
         }
 
-        //Unity function -> Draw Gizmos 
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
