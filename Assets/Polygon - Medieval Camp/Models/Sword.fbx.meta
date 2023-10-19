@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 95fdc277c632faa45af8f8b24b286130
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: a spear
+    100002: a spear 2
+    100004: halberd
+    100006: halberd broken
+    100008: halberd broken_2
+    100010: havy sword
+    100012: havy sword_2
+    100014: havy sword_2.broken
+    100016: long sword
+    100018: long sword broken
+    100020: smart sword
+    100022: standart sword
+    100024: standart sword broken
+    100026: //RootNode
+    100028: sword king
+    100030: sword king broken
+    400000: a spear
+    400002: a spear 2
+    400004: halberd
+    400006: halberd broken
+    400008: halberd broken_2
+    400010: havy sword
+    400012: havy sword_2
+    400014: havy sword_2.broken
+    400016: long sword
+    400018: long sword broken
+    400020: smart sword
+    400022: standart sword
+    400024: standart sword broken
+    400026: //RootNode
+    400028: sword king
+    400030: sword king broken
+    2100000: Material.010
+    2100002: Material.011
+    2100004: Material.012
+    2100006: Material.013
+    2100008: Material.015
+    2100010: Material.001
+    2100012: Material.004
+    2100014: Material.005
+    2100016: Material
+    2100018: Material.014
+    2100020: Material.016
+    2100022: Material.009
+    2100024: Material.008
+    2100026: Material.007
+    2100028: Material.006
+    2300000: a spear
+    2300002: a spear 2
+    2300004: halberd
+    2300006: halberd broken
+    2300008: halberd broken_2
+    2300010: havy sword
+    2300012: havy sword_2
+    2300014: havy sword_2.broken
+    2300016: long sword
+    2300018: long sword broken
+    2300020: smart sword
+    2300022: standart sword
+    2300024: standart sword broken
+    2300026: sword king
+    2300028: sword king broken
+    3300000: a spear
+    3300002: a spear 2
+    3300004: halberd
+    3300006: halberd broken
+    3300008: halberd broken_2
+    3300010: havy sword
+    3300012: havy sword_2
+    3300014: havy sword_2.broken
+    3300016: long sword
+    3300018: long sword broken
+    3300020: smart sword
+    3300022: standart sword
+    3300024: standart sword broken
+    3300026: sword king
+    3300028: sword king broken
+    4300000: a spear
+    4300002: havy sword
+    4300004: smart sword
+    4300006: long sword
+    4300008: havy sword_2
+    4300010: standart sword
+    4300012: sword king
+    4300014: sword king broken
+    4300016: standart sword broken
+    4300018: long sword broken
+    4300020: havy sword_2.broken
+    4300022: a spear 2
+    4300024: halberd
+    4300026: halberd broken
+    4300028: halberd broken_2
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

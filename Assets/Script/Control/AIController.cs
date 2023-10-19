@@ -14,6 +14,7 @@ namespace RPG.Control
         [SerializeField] private float chasingDistance = 3f;
         [SerializeField] private float supiciousTime = 5f;
 
+
         private GameObject player;
 
         private Fighter fighter;
@@ -21,7 +22,9 @@ namespace RPG.Control
 
         private Health healthTarget;
         private Vector3 guardPosition;
+//        private Vector3 firstGuardPosition;
 
+        //Patrol Path
         [SerializeField] private PatrolPath patrolPath; 
         private int currentPatrolPoint = 0;
         [SerializeField] private float PatrolRadiusAccept = 2f;
@@ -36,7 +39,7 @@ namespace RPG.Control
             fighter = GetComponent<Fighter>();
             mover = GetComponent<Mover>();  
             healthTarget = GetComponent<Health>();
-            guardPosition =  this.transform.position;
+            guardPosition =  transform.position;
         }
 
         // Update is called once per frame

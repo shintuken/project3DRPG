@@ -104,19 +104,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.06
+      value: 20.2
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000009536743
+      value: -11.925658
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.04
+      value: 72.77
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -186,9 +186,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chasingDistance: 5.14
-  patrolPath: {fileID: 0}
   supiciousTime: 3
-  dwellingTimeMax: 3
+  patrolPath: {fileID: 0}
+  PatrolRadiusAccept: 0.5
+  timeSinceLastedSawPlayer: Infinity
 --- !u!114 &-1159982517615870906
 MonoBehaviour:
   m_ObjectHideFlags: 0
