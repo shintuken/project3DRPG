@@ -80,7 +80,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3801110445501176499, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: healthPoints
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5339816490277443818, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: health
@@ -108,7 +108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.2
+      value: -26.75
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -116,7 +116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 72.77
+      value: 80.61
       objectReference: {fileID: 0}
     - target: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -188,7 +188,7 @@ MonoBehaviour:
   chasingDistance: 5.14
   supiciousTime: 3
   patrolPath: {fileID: 0}
-  PatrolRadiusAccept: 0.5
+  PatrolRadiusAccept: 1.5
   timeSinceLastedSawPlayer: Infinity
 --- !u!114 &-1159982517615870906
 MonoBehaviour:
