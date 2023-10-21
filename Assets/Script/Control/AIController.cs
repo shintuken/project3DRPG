@@ -6,13 +6,17 @@ using RPG.Core;
 using RPG.Movement;
 using System.Threading;
 using System;
+using UnityEngine.AI;
 
 namespace RPG.Control
 {
     public class AIController : MonoBehaviour
     {
         [SerializeField] private float chasingDistance = 3f;
-        [SerializeField] private float supiciousTime = 5f;
+        [SerializeField] private float chasingSpeed = 10f;
+        [Range(0f, 1f)]
+        [SerializeField] private float moveSpeedPatrolFraction = .2f;
+        [SerializeField] private float moveSpeedChasingFraction = .8f;
 
 
         private GameObject player;
@@ -30,14 +34,18 @@ namespace RPG.Control
         [SerializeField] private float PatrolRadiusAccept = 2f;
 
 
-        [SerializeField] private float timeSinceLastedSawPlayer = Mathf.Infinity;
+         private float timeSinceLastedSawPlayer = Mathf.Infinity;
+        [SerializeField] private float supiciousTime = 5f;
+
+        private float timeSinceLastedWait = Mathf.Infinity;
+        [SerializeField] private float patrolWaitingTime = 3f;
 
 
         private void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player");
             fighter = GetComponent<Fighter>();
-            mover = GetComponent<Mover>();  
+            mover = GetComponent<Mover>();
             healthTarget = GetComponent<Health>();
             guardPosition =  transform.position;
         }
@@ -59,7 +67,12 @@ namespace RPG.Control
             {
                 GuardBehaviour();
             }
+            CountingTime();
+        }
 
+        private void CountingTime()
+        {
+            timeSinceLastedWait += Time.deltaTime;
             timeSinceLastedSawPlayer += Time.deltaTime;
         }
 
@@ -72,7 +85,11 @@ namespace RPG.Control
                 CyclePosition();
             }
             guardPosition = GetCurrentState();
-            mover.StartMoveAction(guardPosition);
+            if (timeSinceLastedWait > patrolWaitingTime)
+            {
+                timeSinceLastedWait = 0f;
+                mover.StartMoveAction(guardPosition, moveSpeedPatrolFraction);
+            }
 
         }
 
