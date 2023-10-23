@@ -96,6 +96,7 @@ namespace RPG.Combat
         {
             TriggerStopAttack();
             target = null;
+            GetComponent<Mover>().Cancel();
         }
 
         private void TriggerStopAttack()
