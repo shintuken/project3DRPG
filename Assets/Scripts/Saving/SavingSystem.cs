@@ -50,7 +50,7 @@ namespace RPG.Saving
             using (FileStream stream = File.Open(path, FileMode.Open))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
-                return (Dictionary<string, object>)formatter.Deserialize(stream);
+                return (Dictionary<string, object>)formatter.Deserialize(stream);     
             }
         }
 
