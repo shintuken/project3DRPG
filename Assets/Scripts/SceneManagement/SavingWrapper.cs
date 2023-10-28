@@ -10,11 +10,22 @@ namespace RPG.SceneManagement
     public class SavingWrapper : MonoBehaviour
     {
         private SavingSystem savingSystem;
+        private float fadeInTime = 0.2f;
+        private Faded fader;
         const string SaveFileName = "save";
 
-        private void Start()
-        {
+        private void Awake()
+        { 
             savingSystem = GetComponent<SavingSystem>();
+/*            fader = FindObjectOfType<Faded>();
+            fader.FadeOutImmediately();*/
+        }
+
+        IEnumerator Start()
+        {
+            
+            yield return GetComponent<SavingSystem>().LoadLastScene(SaveFileName);
+           // yield return fader.FadeIn(fadeInTime);
 
         }
 
@@ -31,13 +42,13 @@ namespace RPG.SceneManagement
             }
         }
 
-        private void Save()
+        public void Save()
         {
 
             savingSystem.Save(SaveFileName);
         }
 
-        private void Load()
+        public void Load()
         {
 
             savingSystem.Load(SaveFileName);

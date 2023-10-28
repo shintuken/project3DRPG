@@ -76,7 +76,7 @@ namespace RPG.Combat
                 //Damage on target
                 target.TakeDamage(weaponDamage);
                 //Shake camera 
-                CameraShaker.Instance.ShakeOnce(3f, 3f, .1f, 1);
+                //CameraShaker.Instance.ShakeOnce(3f, 3f, .1f, 1);
             }    
         }
 

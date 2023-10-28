@@ -54,13 +54,24 @@ namespace RPG.SceneManagement
                 Faded faded =  FindObjectOfType<Faded>();
                 //Do effect fade out 
                 yield return faded.FadeOut(fadeOutTime);
+
+                //save last scene
+                SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+                savingWrapper.Save();
+                
                 //Load new scene 
                 yield return SceneManager.LoadSceneAsync(sceneToLoad);
+
+                //load new scene
+                savingWrapper.Load();
 
                 //Get another Portal (on another scene)
                 Portal otherPortal = GetAnotherPortal();
                 //Update position player to portal in next scene
                 UpdatePlayer(otherPortal);
+
+                //save new scene (to load when restart)
+                savingWrapper.Save();
 
                 //Wait a little time before Fade in (avoid some problem when load to another scene)
                 yield return new WaitForSeconds(waitingTime);
