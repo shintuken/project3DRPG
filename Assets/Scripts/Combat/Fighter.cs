@@ -4,20 +4,45 @@ using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
 using EZCameraShake;
+using System;
 
 namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
-        [SerializeField] private float attackRange = 2f;
-        [SerializeField] private float timeBetweenAttack = 2f;
-        [SerializeField] private float weaponDamage = 5f;
+        [SerializeField] private Transform righthandWeapon = null;
+        [SerializeField] private Transform lefthandWeapon = null;
+        [SerializeField] private Weapon defaultweapon = null;
+
+
+
 
         //Không cần dùng transform mà dùng trực tiếp Health để sử dụng 
         Health target;
         //Set infinity so when start object will attack immediately without waitting time
         float timeSinceLastAttack = Mathf.Infinity;
+        //current weapon character used
+        Weapon currentWeapon = null;
 
+        private void Start()
+        {
+            EquipWeapon(defaultweapon);
+        }
+
+
+        //spawn weapon
+        public void EquipWeapon(Weapon weapon)
+        {
+            if(currentWeapon != null)
+            {
+                currentWeapon.RemoveWeapon();
+            }
+            currentWeapon = weapon;
+            //create new animator
+            Animator animator = GetComponent<Animator>();
+            //Spawn animation
+            currentWeapon.Spawn(righthandWeapon, lefthandWeapon, animator);
+        }
 
         private void Update()
         {
@@ -42,8 +67,8 @@ namespace RPG.Combat
         public bool CanAttack(GameObject target)
         {
             if (target == null) return false;
-            Health testTarget = target.GetComponent<Health>();
-            return (testTarget != null && !testTarget.IsDeath());
+            Health combatTarget = target.GetComponent<Health>();
+            return (combatTarget != null && !combatTarget.IsDeath());
         }
 
         private void AttackBehaviour()
@@ -51,7 +76,7 @@ namespace RPG.Combat
             //Look at enemy 
             transform.LookAt(target.transform);
 
-            if (timeSinceLastAttack > timeBetweenAttack)
+            if (timeSinceLastAttack > currentWeapon.GetTimeBetweenAttack())
             {
                 //this will trigger HIT() event
                 TriggerAttack();
@@ -60,6 +85,7 @@ namespace RPG.Combat
 
         }
 
+        //Manage Animatior event
         private void TriggerAttack()
         {
             //Stop animation Attack
@@ -71,23 +97,37 @@ namespace RPG.Combat
         // Animation attack effect
         void Hit()
         {
-            if(target != null)
+            if (target == null) return;
+
+            //Ranged weapon
+            if (currentWeapon.HasProjectTile())
+            {
+                currentWeapon.LaunchProjectile(righthandWeapon, lefthandWeapon, target);
+            }
+            //Melee weapon
+            else
             {
                 //Damage on target
-                target.TakeDamage(weaponDamage);
-                //Shake camera 
-                //CameraShaker.Instance.ShakeOnce(3f, 3f, .1f, 1);
-            }    
+                target.TakeDamage(currentWeapon.GetWeaponDamage());
+            }
+            //Shake camera 
+            //CameraShaker.Instance.ShakeOnce(3f, 3f, .1f, 1);
+        }
+
+        //Trigger event when shoot arrow
+        void Shoot()
+        {
+            //Manage when attack animation
+            Hit();
         }
 
         private bool GetInRange()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < attackRange;
+            return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.GetAttackRange();
         }
 
         public void Attack(GameObject Target)
         {
-
             GetComponent<ActionScheduler>().StartAction(this);
             target = Target.GetComponent<Health>();
         }

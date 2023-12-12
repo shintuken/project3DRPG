@@ -20,9 +20,9 @@ namespace RPG.Control
 
 
         private GameObject player;
-
         private Fighter fighter;
         private Mover mover;
+        private Weapon weapon;
 
         private Health healthTarget;
         private Vector3 guardPosition;
@@ -131,8 +131,6 @@ namespace RPG.Control
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, chasingDistance);
-
-            //Gizmos.DrawSphere(transform.position, chasingDistance);
         }
 
     }

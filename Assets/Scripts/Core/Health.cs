@@ -47,9 +47,9 @@ namespace RPG.Core
            healthPoints = (float)state;
            
            if(healthPoints <= 0)
-            {
+           {
                 Death();
-            }
+           }
         }
 
     }

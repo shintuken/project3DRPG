@@ -56,11 +56,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13787996, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!4 &3110252370152319300 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481036, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+  m_PrefabInstance: {fileID: 3110252370151980616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3110252370152376646 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+  m_PrefabInstance: {fileID: 3110252370151980616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3110252370152382768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 417656, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
@@ -75,9 +89,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: acdc333205cc7914e8e968df1d6af7f7, type: 2}
+    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      propertyPath: handWeapon
+      value: 
+      objectReference: {fileID: 3110252370152376646}
+    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: attackRange
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      propertyPath: defaultweapon
+      value: 
+      objectReference: {fileID: 11400000, guid: acdc333205cc7914e8e968df1d6af7f7, type: 2}
+    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      propertyPath: LefthandWeapon
+      value: 
+      objectReference: {fileID: 3110252370152319300}
+    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      propertyPath: lefthandWeapon
+      value: 
+      objectReference: {fileID: 3110252370152319300}
+    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      propertyPath: RighthandWeapon
+      value: 
+      objectReference: {fileID: 3110252370152376646}
+    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      propertyPath: righthandWeapon
+      value: 
+      objectReference: {fileID: 3110252370152376646}
     - target: {fileID: 3801110445501176499, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: healthPoints
       value: 40
@@ -160,6 +202,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7193436131083894672, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       insertIndex: 4
+      addedObject: {fileID: 2525543965374027830}
+    - targetCorrespondingSourceObject: {fileID: 7193436131083894672, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      insertIndex: 5
       addedObject: {fileID: 5829464529257054882}
     - targetCorrespondingSourceObject: {fileID: 7193436131083894672, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       insertIndex: -1
@@ -167,12 +212,28 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7193436131083894672, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       insertIndex: -1
       addedObject: {fileID: -9063254080961399327}
+    - targetCorrespondingSourceObject: {fileID: 7193436131083894672, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8345021146836743719}
   m_SourcePrefab: {fileID: 100100000, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
 --- !u!1 &89052718462677775 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7193436131083894672, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
   m_PrefabInstance: {fileID: 7127044222724017311}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2525543965374027830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89052718462677775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
 --- !u!114 &5829464529257054882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,10 +247,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chasingDistance: 5.14
-  supiciousTime: 3
+  chasingSpeed: 10
+  moveSpeedPatrolFraction: 0.2
+  moveSpeedChasingFraction: 0.8
   patrolPath: {fileID: 0}
   PatrolRadiusAccept: 1.5
-  timeSinceLastedSawPlayer: Infinity
+  supiciousTime: 3
+  patrolWaitingTime: 3
 --- !u!114 &-1159982517615870906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +289,33 @@ CapsuleCollider:
   m_Height: 1.9498395
   m_Direction: 1
   m_Center: {x: -0.0878837, y: 0.8999197, z: 0.0006788371}
+--- !u!54 &8345021146836743719
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89052718462677775}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &630424239004706795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}

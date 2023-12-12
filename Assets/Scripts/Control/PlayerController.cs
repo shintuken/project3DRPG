@@ -23,7 +23,6 @@ namespace RPG.Control
             if (healthTarget.IsDeath()) return;
             if(InteractWithCombat()) return;
             if(InteractWithMovement()) return;
-            Debug.Log("Out of world map!");
         }
 
         private bool InteractWithCombat()
