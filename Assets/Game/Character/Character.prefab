@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &4484548758519225603
 MeshRenderer:
@@ -136,9 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b3448c662d8ba42bfa0de76c27fb92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2
-  timeBetweenAttack: 2
-  weaponDamage: 5
+  righthandWeapon: {fileID: 0}
+  lefthandWeapon: {fileID: 0}
+  defaultWeapon: {fileID: 11400000, guid: acdc333205cc7914e8e968df1d6af7f7, type: 2}
+  defaultWeaponName: Unarmed
 --- !u!114 &7933821964191904398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,9 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b3448c662d8ba42bfa0de76c27fb92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2
-  timeBetweenAttack: 2
-  weaponDamage: 5
+  righthandWeapon: {fileID: 0}
+  lefthandWeapon: {fileID: 0}
+  defaultWeapon: {fileID: 0}
+  defaultWeaponName: Unarmed
 --- !u!114 &3801110445501176499
 MonoBehaviour:
   m_ObjectHideFlags: 0

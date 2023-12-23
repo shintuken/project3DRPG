@@ -39,7 +39,7 @@ namespace RPG.Movement
         public void MoveTo(Vector3 destination, float moveSpeedFraction = 1)
         {
             navMeshAgent.destination = destination;
-            navMeshAgent.speed = maxSpeed * Mathf.Clamp01(moveSpeedFraction);
+            navMeshAgent.speed = maxSpeed * moveSpeedFraction;
             navMeshAgent.isStopped = false;
         }
 

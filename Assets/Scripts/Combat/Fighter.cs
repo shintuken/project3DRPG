@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using RPG.UI;
 using EZCameraShake;
 using System;
+using RPG.Saving;
+using Unity.VisualScripting;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] private Transform righthandWeapon = null;
         [SerializeField] private Transform lefthandWeapon = null;
-        [SerializeField] private Weapon defaultweapon = null;
-
-
-
+        [SerializeField] private Weapon defaultWeapon = null;
+        [SerializeField] private string defaultWeaponName = "Unarmed";
+        [SerializeField] private PlayerHealthBar playerHealthBar;
 
         //Không cần dùng transform mà dùng trực tiếp Health để sử dụng 
         Health target;
@@ -26,8 +28,17 @@ namespace RPG.Combat
 
         private void Start()
         {
-            EquipWeapon(defaultweapon);
+            if(currentWeapon == null)
+            {
+                EquipWeapon(defaultWeapon);
+            }     
         }
+
+        //Update for GMT 
+        public Weapon GetWeapon()
+        {
+            return currentWeapon;
+        }     
 
 
         //spawn weapon
@@ -41,6 +52,7 @@ namespace RPG.Combat
             //create new animator
             Animator animator = GetComponent<Animator>();
             //Spawn animation
+            // LOI SCENE 2
             currentWeapon.Spawn(righthandWeapon, lefthandWeapon, animator);
         }
 
@@ -59,8 +71,14 @@ namespace RPG.Combat
             //Get in range and attack
             else
             {
-                GetComponent<Mover>().Cancel();             
-                AttackBehaviour();           
+                GetComponent<Mover>().Cancel();
+                AttackBehaviour();
+                //If Player get damage
+                if (target.tag == "Player")
+                {
+                    Health playerHealth = target.GetComponent<Health>();
+                    playerHealthBar.UpdateHealthBarUI(playerHealth.GetHealthPoints(), playerHealth.GetMaxHealth(),0);
+                }
             }
         }
 
@@ -114,6 +132,8 @@ namespace RPG.Combat
             //CameraShaker.Instance.ShakeOnce(3f, 3f, .1f, 1);
         }
 
+
+
         //Trigger event when shoot arrow
         void Shoot()
         {
@@ -147,6 +167,18 @@ namespace RPG.Combat
             GetComponent<Animator>().ResetTrigger("Attacking");
         }
 
+        //Save
+        public object CaptureState()
+        {
+            return currentWeapon.name;
+        }
+        //Load
+        public void RestoreState(object state)
+        {
+            string weaponName = (string)state;
+            Weapon weapon = Resources.Load<Weapon>(weaponName);
+            EquipWeapon(weapon);
+        }
 
     }
 }

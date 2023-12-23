@@ -1,4 +1,5 @@
 using RPG.Saving;
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,13 +11,34 @@ namespace RPG.Core
 {
     public class Health : MonoBehaviour, ISaveable
     {
-        [SerializeField] private float healthPoints = 100f;
+        [SerializeField] private float maxHealth = 100f;
+        private float healthPoints;
         private bool isDeath = false;
+
+        private void Awake()
+        {
+            healthPoints = maxHealth;
+        }
+
+        public float GetMaxHealth()
+        {
+            return maxHealth;
+        }
 
         public bool IsDeath()
         {
             return isDeath;
         }
+
+        public float GetHealthPoints()
+        {
+            return healthPoints;
+        }
+
+        public void SetHealth(float health)
+        {
+            healthPoints = health;
+        } 
 
 
 

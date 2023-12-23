@@ -1,4 +1,5 @@
 ﻿using RPG.Core;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -32,10 +33,15 @@ namespace RPG.Combat
                 handTransform = GetHandTransform(rightHandWeapon, leftHandWeapon);
                 weaponInstance = Instantiate(equipedPrefab, handTransform);
             }
+
+            var overrideController = animator.runtimeAnimatorController as AnimatorController;
             //check if it unarmed or not, unarmed is default and set null variable
             if (overrideAnimator != null)
             {
                 animator.runtimeAnimatorController = overrideAnimator;
+            }else if (overrideAnimator != null)
+            { 
+                animator.runtimeAnimatorController = overrideAnimator.runtimeAnimatorController;
             }
         }
 
@@ -79,6 +85,11 @@ namespace RPG.Combat
         public float GetWeaponDamage()
         {
             return weaponDamage;
+        }
+
+        public void SetWeaponDamage(float damage)
+        {
+            weaponDamage = damage;
         }
 
         public float GetTimeBetweenAttack()

@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using Unity.VisualScripting;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
         private Health healthTarget;
+        private float moveSpeedFraction = 1;
 
         private void Start()
         {
@@ -23,6 +25,12 @@ namespace RPG.Control
             if (healthTarget.IsDeath()) return;
             if(InteractWithCombat()) return;
             if(InteractWithMovement()) return;
+        }
+
+        //For Cheat manager
+        public void UpdateSpeedFraction(float speedFraction)
+        {
+            moveSpeedFraction = speedFraction;
         }
 
         private bool InteractWithCombat()
@@ -55,7 +63,7 @@ namespace RPG.Control
                 {
                     if (Input.GetMouseButton(1))
                     {
-                        GetComponent<Mover>().StartMoveAction(hit.point);
+                        GetComponent<Mover>().StartMoveAction(hit.point, moveSpeedFraction);
                     }
                     return true;
                 }
