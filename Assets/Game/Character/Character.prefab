@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5957853190724003534}
   - component: {fileID: -6051859471410470442}
   - component: {fileID: 3801110445501176499}
+  - component: {fileID: 1144722952246837665}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -140,6 +141,7 @@ MonoBehaviour:
   lefthandWeapon: {fileID: 0}
   defaultWeapon: {fileID: 11400000, guid: acdc333205cc7914e8e968df1d6af7f7, type: 2}
   defaultWeaponName: Unarmed
+  playerHealthBar: {fileID: 0}
 --- !u!114 &7933821964191904398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +182,7 @@ MonoBehaviour:
   lefthandWeapon: {fileID: 0}
   defaultWeapon: {fileID: 0}
   defaultWeaponName: Unarmed
+  playerHealthBar: {fileID: 0}
 --- !u!114 &3801110445501176499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,4 +195,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d60003964a2a16499faf7cee31d47df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 100
+  maxHealth: 100
+--- !u!114 &1144722952246837665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7193436131083894672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcb400f12603ab4c859ff98d9609879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 1
+  characterClass: 1
