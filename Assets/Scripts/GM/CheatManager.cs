@@ -1,6 +1,7 @@
 using RPG.Combat;
 using RPG.Control;
 using RPG.Core;
+using RPG.Resources;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;

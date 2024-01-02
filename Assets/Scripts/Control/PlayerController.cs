@@ -4,8 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
-using RPG.Core;
 using Unity.VisualScripting;
+using RPG.Resources;
 
 namespace RPG.Control
 {

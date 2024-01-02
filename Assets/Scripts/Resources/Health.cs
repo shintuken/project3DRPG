@@ -1,3 +1,4 @@
+using RPG.Core;
 using RPG.Saving;
 
 using System.Collections;
@@ -7,7 +8,7 @@ using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
 
-namespace RPG.Core
+namespace RPG.Resources
 {
     public class Health : MonoBehaviour, ISaveable
     {

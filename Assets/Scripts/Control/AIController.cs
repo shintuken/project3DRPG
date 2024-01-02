@@ -7,6 +7,7 @@ using RPG.Movement;
 using System.Threading;
 using System;
 using UnityEngine.AI;
+using RPG.Resources;
 
 namespace RPG.Control
 {
