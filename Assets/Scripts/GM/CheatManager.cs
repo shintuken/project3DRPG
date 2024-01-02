@@ -72,13 +72,13 @@ namespace RPG.GM
         {
             if (!onFullHP)
             {
-                normalHealth = playerHealth.GetHealthPoints();
-                playerHealth.SetHealth(fullHealth);
+               /* normalHealth = playerHealth.GetHealthPoints();
+                playerHealth.SetHealth(fullHealth);*/
                 fullHPBtn.GetComponentInChildren<TMP_Text>().text = "Full HP: ON";
             }
             else
             {
-                playerHealth.SetHealth(normalHealth);
+            /*    playerHealth.SetHealth(normalHealth);*/
                 fullHPBtn.GetComponentInChildren<TMP_Text>().text = "Full HP: OFF";
             }
             onFullHP = !onFullHP;

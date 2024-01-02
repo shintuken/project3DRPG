@@ -13,12 +13,12 @@ namespace RPG.Resources
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] private float maxHealth = 100f;
-        private float healthPoints;
+        [SerializeField] private float healthPoints;
         private bool isDeath = false;
 
         private void Awake()
         {
-            healthPoints = maxHealth;
+            healthPoints = GetComponent<BaseStat>().GetHealth();
         }
 
         public float GetMaxHealth()

@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthPoints: 0
 --- !u!114 &1144722952246837665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,3 +211,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingLevel: 1
   characterClass: 1
+  progression: {fileID: 11400000, guid: 1624cc2c1c3a558438480673c86bbb0c, type: 2}

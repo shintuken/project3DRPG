@@ -1147,7 +1147,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211645168}
-  m_LocalRotation: {x: -0.03412354, y: 0.9196664, z: -0.08204174, w: -0.38251603}
+  m_LocalRotation: {x: -0.03412354, y: 0.9196664, z: -0.082041726, w: -0.38251597}
   m_LocalPosition: {x: -19.41, y: 15.62, z: 87.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8184,7 +8184,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111949632}
-  m_LocalRotation: {x: 0.14209358, y: 0.27389866, z: -0.040953744, w: 0.9503219}
+  m_LocalRotation: {x: 0.14209357, y: 0.27389866, z: -0.040953737, w: 0.9503219}
   m_LocalPosition: {x: -12.68, y: 4.25, z: 77.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8362,6 +8362,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: HP Player UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2056719942064562695, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.040598
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056719942064562695, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.8886642
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056719942064562695, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 33.433422
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868111698773779944, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
+      propertyPath: startingLevel
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3868111698773779944, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
       propertyPath: characterClass
       value: 0
@@ -8409,6 +8425,18 @@ PrefabInstance:
     - target: {fileID: 4222738366477547939, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791644592772098151, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.040598
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791644592772098151, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.8886642
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791644592772098151, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 33.433422
       objectReference: {fileID: 0}
     - target: {fileID: 8012505499366902663, guid: ee96c3d403e6a3f458d04b42451ae2ce, type: 3}
       propertyPath: chipSpeed
