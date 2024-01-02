@@ -18,7 +18,6 @@ namespace RPG.Combat
         [SerializeField] private Transform lefthandWeapon = null;
         [SerializeField] private Weapon defaultWeapon = null;
         [SerializeField] private string defaultWeaponName = "Unarmed";
-        [SerializeField] private PlayerHealthBar playerHealthBar;
 
         //Không cần dùng transform mà dùng trực tiếp Health để sử dụng 
         Health target;
@@ -74,12 +73,6 @@ namespace RPG.Combat
             {
                 GetComponent<Mover>().Cancel();
                 AttackBehaviour();
-                //If Player get damage
-                if (target.tag == "Player")
-                {
-                    Health playerHealth = target.GetComponent<Health>();
-                    playerHealthBar.UpdateHealthBarUI(playerHealth.GetHealthPoints(), playerHealth.GetMaxHealth(),0);
-                }
             }
         }
 
@@ -99,6 +92,7 @@ namespace RPG.Combat
             {
                 //this will trigger HIT() event
                 TriggerAttack();
+                UpdateHPBar(target.gameObject);
                 timeSinceLastAttack = 0f;
             }
 
@@ -128,7 +122,9 @@ namespace RPG.Combat
             {
                 //Damage on target
                 target.TakeDamage(currentWeapon.GetWeaponDamage());
+                
             }
+            
             //Shake camera 
             //CameraShaker.Instance.ShakeOnce(3f, 3f, .1f, 1);
         }
@@ -151,6 +147,31 @@ namespace RPG.Combat
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = Target.GetComponent<Health>();
+            
+        }
+
+        //LỖI KHÔNG UPDATE THANH ĐỎ (BACKHPBAR)
+        private void UpdateHPBar(GameObject Target)
+        {
+            Health targetHealth = Target.GetComponent<Health>();
+            Transform HPBarTarget = Target.transform.Find("HPBar");
+            if (HPBarTarget != null)
+            {
+                PlayerHealthBar targetHealthBar = HPBarTarget.GetComponent<PlayerHealthBar>();
+                //UPDATE HEALTH BAR
+                if(targetHealth.GetHealthPoints() > currentWeapon.GetWeaponDamage())
+                {
+                    targetHealthBar.UpdateHealthBarUI(targetHealth.GetHealthPoints(), targetHealth.GetMaxHealth(), 0);
+                }
+                else
+                {
+                    targetHealthBar.UpdateHealthBarUI(0, targetHealth.GetMaxHealth(), 0);
+                }
+            }
+            else
+            {
+                Debug.Log("NULL HEALTH BAR");
+            }
         }
 
         public void Cancel()

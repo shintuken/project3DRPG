@@ -47,7 +47,8 @@ namespace RPG.Control
                 }
                 if (Input.GetMouseButtonDown(1))
                 {
-                    GetComponent<Fighter>().Attack(target.gameObject);
+                    GameObject enemy = hit.transform.gameObject;
+                    GetComponent<Fighter>().Attack(enemy);
                 }
 
                 return true;

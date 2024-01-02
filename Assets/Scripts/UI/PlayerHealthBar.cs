@@ -21,8 +21,6 @@ namespace RPG.UI
             this.lerpTimer = lerpTimer;
             health = healthPoint;
             maxHealth = maxHealthPoint;
-            Debug.Log("health" + health);
-            Debug.Log("Maxhealth" + maxHealth);
 
             //Đang quy đổi về hệ số 0-1 ra so sánh
             //Fill amount hiện tại cả thanh máu chính thức (front)
@@ -57,7 +55,7 @@ namespace RPG.UI
                 lerpTimer += Time.deltaTime;
                 float percentComplete = lerpTimer / chipSpeed;
                 //Làm chuyển động mượt hơn
-                percentComplete = percentComplete * percentComplete;
+                //percentComplete = percentComplete * percentComplete;
                 //Set thanh máu chính di chuyển tăng lên = với thanh máu động
                 frontHealthBar.fillAmount = Mathf.Lerp(fillAmountFrontHealthBar, backHealthBar.fillAmount, percentComplete);
             }
