@@ -1,8 +1,10 @@
 ﻿using RPG.Combat;
 using RPG.Core;
 using RPG.Resources;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +14,7 @@ namespace RPG.UI
     {
         private float health;
         private float lerpTimer;
-        public float maxHealth = 100;
+        public float maxHealth = 100; 
         public float chipSpeed = 1f;
 
         public Image frontHealthBar;
