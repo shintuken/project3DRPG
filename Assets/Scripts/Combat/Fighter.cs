@@ -92,7 +92,7 @@ namespace RPG.Combat
             {
                 //this will trigger HIT() event
                 TriggerAttack();
-                UpdateHPBar(target.gameObject);
+
                 timeSinceLastAttack = 0f;
             }
 
@@ -150,6 +150,12 @@ namespace RPG.Combat
             
         }
 
+        //GET TARGET
+        public Health GetTarget()
+        {
+            return target;
+        }
+
         //LỖI KHÔNG UPDATE THANH ĐỎ (BACKHPBAR)
         private void UpdateHPBar(GameObject Target)
         {
@@ -161,11 +167,7 @@ namespace RPG.Combat
                 //UPDATE HEALTH BAR
                 if(targetHealth.GetHealthPoints() > currentWeapon.GetWeaponDamage())
                 {
-                    targetHealthBar.UpdateHealthBarUI(targetHealth.GetHealthPoints(), targetHealth.GetMaxHealth(), 0);
-                }
-                else
-                {
-                    targetHealthBar.UpdateHealthBarUI(0, targetHealth.GetMaxHealth(), 0);
+                    targetHealthBar.UpdateHealthBarUI(targetHealth, 0);
                 }
             }
             else

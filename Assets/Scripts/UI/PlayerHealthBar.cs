@@ -1,4 +1,6 @@
-﻿using RPG.Core;
+﻿using RPG.Combat;
+using RPG.Core;
+using RPG.Resources;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,11 +18,34 @@ namespace RPG.UI
         public Image frontHealthBar;
         public Image backHealthBar;
 
-        public void UpdateHealthBarUI(float healthPoint, float maxHealthPoint, float lerpTimer)
+        private Fighter fighter;
+
+        private void Awake()
+        {
+            fighter = GameObject.FindWithTag("Player").GetComponent<Fighter>();
+        }
+
+        private void Update()
+        {
+            //player
+            if (fighter != null)
+            {
+                Health target = fighter.GetTarget();
+                UpdateHealthBarUI(target, 0);
+            }
+            else 
+            {
+                fighter = GameObject.FindWithTag("Enemy").GetComponent<Fighter>();
+                Health target = fighter.GetTarget();
+                UpdateHealthBarUI(target, 0);
+            }
+            
+        }
+        public void UpdateHealthBarUI(Health target, float lerpTimer)
         {
             this.lerpTimer = lerpTimer;
-            health = healthPoint;
-            maxHealth = maxHealthPoint;
+            health = target.GetHealthPoints();
+            maxHealth = target.GetMaxHealth();
 
             //Đang quy đổi về hệ số 0-1 ra so sánh
             //Fill amount hiện tại cả thanh máu chính thức (front)
@@ -39,8 +64,8 @@ namespace RPG.UI
                 lerpTimer += Time.deltaTime;
                 //thời gian giảm 
                 float percentComplete = lerpTimer / chipSpeed;
-/*                //Làm chuyển động mượt hơn
-                percentComplete = percentComplete * percentComplete;*/
+                //Làm chuyển động mượt hơn
+                percentComplete = percentComplete * percentComplete;
                 //chạy từ chỗ máu backhealthbar đến healthbarfraction trong thời gian percentComplete
                 backHealthBar.fillAmount = Mathf.Lerp(fillAmountBackHealthBar, healbarFraction, percentComplete);
             }
