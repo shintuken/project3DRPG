@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
-using RPG.UI;
 using EZCameraShake;
 using System;
 using RPG.Saving;
@@ -59,10 +58,12 @@ namespace RPG.Combat
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
-            //We don't have Target
-            if (target == null) return;
-            //Target already death
-            if (target.IsDeath()) return;
+
+            if (target == null || target.IsDeath())
+            {
+                // Thêm dòng này để ngăn chặn việc gọi UpdateHealthBarUI khi target không hợp lệ
+                return;
+            }
             //Move to target range
             if (!GetInRange())
             {
@@ -154,26 +155,6 @@ namespace RPG.Combat
         public Health GetTarget()
         {
             return target;
-        }
-
-        //LỖI KHÔNG UPDATE THANH ĐỎ (BACKHPBAR)
-        private void UpdateHPBar(GameObject Target)
-        {
-            Health targetHealth = Target.GetComponent<Health>();
-            Transform HPBarTarget = Target.transform.Find("HPBar");
-            if (HPBarTarget != null)
-            {
-                PlayerHealthBar targetHealthBar = HPBarTarget.GetComponent<PlayerHealthBar>();
-                //UPDATE HEALTH BAR
-                if(targetHealth.GetHealthPoints() > currentWeapon.GetWeaponDamage())
-                {
-                    targetHealthBar.UpdateHealthBarUI(targetHealth, 0);
-                }
-            }
-            else
-            {
-                Debug.Log("NULL HEALTH BAR");
-            }
         }
 
         public void Cancel()

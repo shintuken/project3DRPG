@@ -42,7 +42,10 @@ namespace RPG.Resources
             healthPoints = health;
         } 
 
-
+        public float GetHealthFraction()
+        {
+            return healthPoints / maxHealth;
+        }
 
         public void TakeDamage(float damage)
         {

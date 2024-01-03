@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7934114064535372073}
   - component: {fileID: 3667650610462198711}
   - component: {fileID: 7450376117412011734}
-  - component: {fileID: 2799331977467047047}
+  - component: {fileID: 8929774541607325993}
   m_Layer: 5
   m_Name: HPBar
   m_TagString: HPBar
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2799331977467047047
+--- !u!114 &8929774541607325993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,11 +116,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4112091595906743346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c38fa3eb0304750468c408233f241167, type: 3}
+  m_Script: {fileID: 11500000, guid: fbdafa65ea557a94886e169751981cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  chipSpeed: 0.1
+  chipSpeed: 1
   frontHealthBar: {fileID: 3018940329261851570}
   backHealthBar: {fileID: 4571112532794590808}
 --- !u!1 &4594040651582386132
@@ -149,7 +149,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4594040651582386132}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -754,10 +754,6 @@ PrefabInstance:
       propertyPath: righthandWeapon
       value: 
       objectReference: {fileID: 3110252370152376646}
-    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
-      propertyPath: targetHealthBar
-      value: 
-      objectReference: {fileID: 2799331977467047047}
     - target: {fileID: 3801110445501176499, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: healthPoints
       value: 40

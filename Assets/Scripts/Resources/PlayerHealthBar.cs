@@ -1,6 +1,5 @@
 ﻿using RPG.Combat;
 using RPG.Core;
-using RPG.Resources;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RPG.UI
+namespace RPG.Resources
 {
     public class PlayerHealthBar : MonoBehaviour
     {
@@ -16,38 +15,25 @@ namespace RPG.UI
         private float lerpTimer;
         public float maxHealth = 100; 
         public float chipSpeed = 1f;
-
+       
         public Image frontHealthBar;
         public Image backHealthBar;
 
-        private Fighter fighter;
+        private Health playerHeath;
 
         private void Awake()
         {
-            fighter = GameObject.FindWithTag("Player").GetComponent<Fighter>();
+            playerHeath = GameObject.FindWithTag("Player").GetComponent<Health>();
         }
 
         private void Update()
         {
-            //player
-            if (fighter != null)
-            {
-                Health target = fighter.GetTarget();
-                UpdateHealthBarUI(target, 0);
-            }
-            else 
-            {
-                fighter = GameObject.FindWithTag("Enemy").GetComponent<Fighter>();
-                Health target = fighter.GetTarget();
-                UpdateHealthBarUI(target, 0);
-            }
-            
+           UpdateHealthBarUI(playerHeath, 0);
+
         }
         public void UpdateHealthBarUI(Health target, float lerpTimer)
         {
             this.lerpTimer = lerpTimer;
-            health = target.GetHealthPoints();
-            maxHealth = target.GetMaxHealth();
 
             //Đang quy đổi về hệ số 0-1 ra so sánh
             //Fill amount hiện tại cả thanh máu chính thức (front)
@@ -55,7 +41,7 @@ namespace RPG.UI
             //Fill amount của máu tăng giảm 
             float fillAmountBackHealthBar = backHealthBar.fillAmount;
             //% HP hiện tại
-            float healbarFraction = health / maxHealth;
+            float healbarFraction = target.GetHealthFraction();
 
             //Trường hợp mất máu
             if (fillAmountBackHealthBar > healbarFraction)
