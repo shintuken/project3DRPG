@@ -1,6 +1,6 @@
 using RPG.Core;
 using RPG.Saving;
-
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -15,6 +15,8 @@ namespace RPG.Resources
         [SerializeField] private float maxHealth;
         [SerializeField] private float healthPoints;
         private bool isDeath = false;
+        //GET UNIQUE ID
+        public string uniqueID = Guid.NewGuid().ToString();
 
         private void Awake()
         {

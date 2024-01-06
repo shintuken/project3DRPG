@@ -1,5 +1,6 @@
 ﻿using RPG.Combat;
 using RPG.Resources;
+using RPG.Saving;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,33 +10,64 @@ public class EnemyHealthBar : MonoBehaviour
 {
     // Start is called before the first frame update
     private float health;
-    private float lerpTimer;
-    public float maxHealth = 100;
+    public float maxHealth;
     public float chipSpeed = 1f;
 
     public Image frontHealthBar;
     public Image backHealthBar;
 
     private Fighter fighter;
+    private CanvasGroup hpCanvas;
+    private float lerpTimer;
+    private Health enemyHealth;
+    private bool isHealthBarVisible = false;
 
     private void Awake()
     {
         fighter = GameObject.FindWithTag("Player").GetComponent<Fighter>();
-       
+        hpCanvas = gameObject.GetComponent<CanvasGroup>();
+        enemyHealth = GetComponentInParent<Health>();
+    }
+
+    private void Start()
+    {
+        hpCanvas.alpha = 0f;
     }
 
     private void Update()
     {
         transform.rotation = Camera.main.transform.rotation;
-        if (fighter != null)
-        {
-            Health health = fighter.GetTarget();
-            UpdateHealthBarUI(health, 0);
-        }
+        ShowUIHPBar();
 
     }
+
+    private void ShowUIHPBar()
+    {
+        if (fighter != null)
+        {
+
+            if (enemyHealth != null && !enemyHealth.IsDeath() && enemyHealth.GetHealthPoints() < enemyHealth.GetMaxHealth())
+            {
+                //UNHIDE
+                hpCanvas.alpha = 1f;
+                isHealthBarVisible = true;
+                UpdateHealthBarUI(enemyHealth, 0);
+            }
+            else
+            {
+                //HIDE
+                isHealthBarVisible = false;
+                hpCanvas.alpha = 0f;
+            }
+        }
+    }
+
     public void UpdateHealthBarUI(Health target, float lerpTimer)
     {
+        if (!isHealthBarVisible)
+        {
+            return;
+        }
         this.lerpTimer = lerpTimer;
 
         //Đang quy đổi về hệ số 0-1 ra so sánh
@@ -44,7 +76,7 @@ public class EnemyHealthBar : MonoBehaviour
         //Fill amount của máu tăng giảm 
         float fillAmountBackHealthBar = backHealthBar.fillAmount;
         //% HP hiện tại
-        float healbarFraction = target.GetHealthFraction();
+        float healbarFraction = enemyHealth.GetHealthFraction();
 
         //Trường hợp mất máu
         if (fillAmountBackHealthBar > healbarFraction)
@@ -76,11 +108,5 @@ public class EnemyHealthBar : MonoBehaviour
             frontHealthBar.fillAmount = Mathf.Lerp(fillAmountFrontHealthBar, backHealthBar.fillAmount, percentComplete);
         }
 
-    }
-
-    void RestoreHealth(float healthRestore)
-    {
-        health += healthRestore;
-        lerpTimer = 0;
     }
 }

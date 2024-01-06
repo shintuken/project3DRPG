@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3667650610462198711}
   - component: {fileID: 7450376117412011734}
   - component: {fileID: 8929774541607325993}
+  - component: {fileID: 8547673071399830327}
   m_Layer: 5
   m_Name: HPBar
   m_TagString: HPBar
@@ -123,6 +124,18 @@ MonoBehaviour:
   chipSpeed: 1
   frontHealthBar: {fileID: 3018940329261851570}
   backHealthBar: {fileID: 4571112532794590808}
+--- !u!225 &8547673071399830327
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112091595906743346}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4594040651582386132
 GameObject:
   m_ObjectHideFlags: 0
