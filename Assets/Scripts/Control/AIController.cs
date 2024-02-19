@@ -14,9 +14,10 @@ namespace RPG.Control
     public class AIController : MonoBehaviour
     {
         [SerializeField] private float chasingDistance = 3f;
-        [SerializeField] private float chasingSpeed = 10f;
+        //[SerializeField] private float chasingSpeed = 8f;
         [Range(0f, 1f)]
         [SerializeField] private float moveSpeedPatrolFraction = .2f;
+        [Range(0f, 1f)]
         [SerializeField] private float moveSpeedChasingFraction = .8f;
 
 

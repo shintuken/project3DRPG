@@ -901,9 +901,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chasingDistance: 5.14
-  chasingSpeed: 10
-  moveSpeedPatrolFraction: 0.2
-  moveSpeedChasingFraction: 0.8
+  moveSpeedPatrolFraction: 0.1
+  moveSpeedChasingFraction: 0.5
   patrolPath: {fileID: 0}
   PatrolRadiusAccept: 1.5
   supiciousTime: 3

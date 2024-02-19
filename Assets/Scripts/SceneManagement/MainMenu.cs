@@ -7,8 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void NewGame()
     {
-        int currentScene = SceneManager.GetActiveScene().rootCount;
+/*        int currentScene = SceneManager.GetActiveScene().rootCount;
         Scene nextScene = SceneManager.Se
-        SceneManager.SetActiveScene();
+        SceneManager.SetActiveScene();*/
     }
 }
