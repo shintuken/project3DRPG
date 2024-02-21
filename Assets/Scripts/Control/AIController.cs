@@ -14,7 +14,7 @@ namespace RPG.Control
     public class AIController : MonoBehaviour
     {
         [SerializeField] private float chasingDistance = 3f;
-        //[SerializeField] private float chasingSpeed = 8f;
+        [SerializeField] private float chasingSpeed = 8f;
         [Range(0f, 1f)]
         [SerializeField] private float moveSpeedPatrolFraction = .2f;
         [Range(0f, 1f)]
@@ -90,7 +90,7 @@ namespace RPG.Control
             if (timeSinceLastedWait > patrolWaitingTime)
             {
                 timeSinceLastedWait = 0f;
-                mover.StartMoveAction(guardPosition, moveSpeedPatrolFraction);
+                mover.StartMoveAction(guardPosition, chasingSpeed, moveSpeedPatrolFraction);
             }
 
         }
