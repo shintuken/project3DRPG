@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button btnOption;
     [SerializeField] private Button btnContinue;
     [SerializeField] private Button btnExit;
+
+    [SerializeField] private EventReference sfxBtnClick;
+    [SerializeField] private EventReference sfxBtnHover;
+
 
     private void Start()
     {
