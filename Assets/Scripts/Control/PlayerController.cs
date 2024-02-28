@@ -6,6 +6,7 @@ using UnityEngine;
 using RPG.Movement;
 using Unity.VisualScripting;
 using RPG.Resources;
+using FMOD.Studio;
 
 namespace RPG.Control
 {

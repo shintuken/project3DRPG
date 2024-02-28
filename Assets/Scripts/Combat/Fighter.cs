@@ -8,6 +8,7 @@ using System;
 using RPG.Saving;
 using RPG.Resources;
 using Unity.VisualScripting;
+using FMODUnity;
 
 namespace RPG.Combat
 {
@@ -17,6 +18,8 @@ namespace RPG.Combat
         [SerializeField] private Transform lefthandWeapon = null;
         [SerializeField] private Weapon defaultWeapon = null;
         [SerializeField] private string defaultWeaponName = "Unarmed";
+
+
 
         //Không cần dùng transform mà dùng trực tiếp Health để sử dụng 
         Health target;

@@ -535,8 +535,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../audio_system_project_3d/audio_system_project_3d.fspro
-  sourceBankPath: ../audio_system_project_3d/Build
+  sourceProjectPath: ../Fmod project/audio_system_fmod_project_01/audio_system_fmod_project_01.fspro
+  sourceBankPath: ../Fmod project/audio_system_fmod_project_01/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -557,8 +557,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
