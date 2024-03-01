@@ -18,6 +18,9 @@ namespace RPG.Resources
         //GET UNIQUE ID
         public string uniqueID = Guid.NewGuid().ToString();
 
+        //event onDeath
+        public event Action OnDeath;
+
         private void Awake()
         {
             maxHealth = GetComponent<BaseStat>().GetHealth();
@@ -65,6 +68,11 @@ namespace RPG.Resources
             GetComponent<Animator>().SetTrigger("Death");
             GetComponent<ActionScheduler>().CancelCurrentAction();
             isDeath = true;
+
+            //Event on Deadth
+            OnDeath?.Invoke();
+
+            Debug.Log("Player in function Deadth");
         }
 
         public object CaptureState()
