@@ -401,8 +401,6 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -4868188334845625609, guid: 252d6c0de33f26e458ad8a74980e0be3, type: 2}
     value: {fileID: 1085935393}
-  - key: {fileID: 2110988648175079525, guid: 252d6c0de33f26e458ad8a74980e0be3, type: 2}
-    value: {fileID: 211645170}
   - key: {fileID: 1225850390912701287, guid: 252d6c0de33f26e458ad8a74980e0be3, type: 2}
     value: {fileID: 1315999433}
   m_ExposedReferences:
@@ -1211,7 +1209,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211645168}
-  m_LocalRotation: {x: -0.03412354, y: 0.9196664, z: -0.08204174, w: -0.38251603}
+  m_LocalRotation: {x: -0.034123547, y: 0.9196664, z: -0.08204173, w: -0.38251606}
   m_LocalPosition: {x: -19.41, y: 15.62, z: 87.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2848,7 +2846,7 @@ MonoBehaviour:
   m_Waypoints:
   - position: {x: 13.261378, y: 13.925763, z: -2.3235574}
     roll: 0
-  - position: {x: 47.9, y: 48.9, z: 22.4}
+  - position: {x: 29.317692, y: 33.46412, z: 13.188976}
     roll: 0
 --- !u!4 &639987233
 Transform:
@@ -9513,6 +9511,14 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5257651961774920185, guid: f8ac0d588a6ec6d4fb50e6b07d86b036, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257651961774920185, guid: f8ac0d588a6ec6d4fb50e6b07d86b036, type: 3}
+      propertyPath: outlineWidth
+      value: 2.08
+      objectReference: {fileID: 0}
     - target: {fileID: 5686675420066999625, guid: f8ac0d588a6ec6d4fb50e6b07d86b036, type: 3}
       propertyPath: defaultweapon
       value: 
@@ -9667,7 +9673,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111949632}
-  m_LocalRotation: {x: 0.14209357, y: 0.27389866, z: -0.040953737, w: 0.9503219}
+  m_LocalRotation: {x: 0.14209358, y: 0.27389866, z: -0.040953744, w: 0.9503219}
   m_LocalPosition: {x: -12.68, y: 4.25, z: 77.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10219,7 +10225,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1288653846166922304, guid: 468a98b375fab8849b1b659764ddc10d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1737887483067823574, guid: 468a98b375fab8849b1b659764ddc10d, type: 3}
       propertyPath: player
@@ -10351,7 +10357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8352352018777076120, guid: 468a98b375fab8849b1b659764ddc10d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6281730836108498958, guid: 468a98b375fab8849b1b659764ddc10d, type: 3}
