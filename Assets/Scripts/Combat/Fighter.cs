@@ -19,6 +19,9 @@ namespace RPG.Combat
         [SerializeField] private Weapon defaultWeapon = null;
         [SerializeField] private string defaultWeaponName = "Unarmed";
 
+        //Get Damage Text Effect 
+        [SerializeField] private DynamicTextData dynamicTextData;
+        [SerializeField] private float TextOffset = 50;
 
 
         //Không cần dùng transform mà dùng trực tiếp Health để sử dụng 
@@ -30,7 +33,8 @@ namespace RPG.Combat
 
         private void Start()
         {
-            if(currentWeapon == null)
+
+            if (currentWeapon == null)
             {
                 EquipWeapon(defaultWeapon);
             }     
@@ -126,7 +130,9 @@ namespace RPG.Combat
             {
                 //Damage on target
                 target.TakeDamage(currentWeapon.GetWeaponDamage());
-                
+                //Update Damage text UI
+                Vector3 newTextPosition = new Vector3(target.transform.position.x, target.transform.position.y + TextOffset, target.transform.position.z);
+                DynamicTextManager.CreateText( newTextPosition, currentWeapon.GetWeaponDamage().ToString(), dynamicTextData);
             }
             
             //Shake camera 

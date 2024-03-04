@@ -11,9 +11,6 @@ namespace RPG.Combat
         [SerializeField] float respawnTime = 5f;
 
 
-
-
-
         private void OnTriggerEnter(Collider other)
         {
 

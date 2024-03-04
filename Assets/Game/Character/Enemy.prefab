@@ -764,6 +764,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3110252370152376646}
     - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      propertyPath: dynamicTextData
+      value: 
+      objectReference: {fileID: 11400000, guid: a5445a47a1f772043ba96c0acbf4ce17, type: 2}
+    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: righthandWeapon
       value: 
       objectReference: {fileID: 3110252370152376646}
@@ -1007,6 +1011,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 89052718462677775}
+  defaultCursor: {fileID: 0}
+  attackCursor: {fileID: 0}
 --- !u!4 &630424239004706795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
