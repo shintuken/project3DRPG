@@ -124,6 +124,7 @@ namespace RPG.Combat
             if (currentWeapon.HasProjectTile())
             {
                 currentWeapon.LaunchProjectile(righthandWeapon, lefthandWeapon, target);
+
             }
             //Melee weapon
             else
@@ -131,12 +132,15 @@ namespace RPG.Combat
                 //Damage on target
                 target.TakeDamage(currentWeapon.GetWeaponDamage());
                 //Update Damage text UI
-                Vector3 newTextPosition = new Vector3(target.transform.position.x, target.transform.position.y + TextOffset, target.transform.position.z);
-                DynamicTextManager.CreateText( newTextPosition, currentWeapon.GetWeaponDamage().ToString(), dynamicTextData);
+
             }
-            
-            //Shake camera 
-            //CameraShaker.Instance.ShakeOnce(3f, 3f, .1f, 1);
+            //Update Damage text UI
+            Vector3 newTextPosition = new Vector3(target.transform.position.x - 5, target.transform.position.y + 5, target.transform.position.z);
+            DynamicTextManager.CreateText(newTextPosition, currentWeapon.GetWeaponDamage().ToString(), dynamicTextData);
+            Debug.Log("target position = " + target.transform.position.ToString());
+            /*            //Shake camera 
+                        CameraShaker.Instance.ShakeOnce(3f, 3f, .1f, 1);*/
+
         }
 
 
