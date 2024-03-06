@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using RPG.Resources;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,9 +13,6 @@ public class HighlightEnemey : MonoBehaviour
     //Enemy Health
     private Health enemyHeath;
 
-    //Cursor
-    [SerializeField] private Texture2D defaultCursor;
-    [SerializeField] private Texture2D attackCursor;
     
     private bool enemyIsDead = false;
 
@@ -23,6 +21,7 @@ public class HighlightEnemey : MonoBehaviour
         enemyOutline = enemy.GetComponent<Outline>();
         enemyOutline.enabled = false;
         enemyHeath = enemy.GetComponent<Health>();
+        //Event check enemy death or not
         enemyHeath.OnDeath += Handle_EnemyHealth;
     }
 
@@ -35,21 +34,19 @@ public class HighlightEnemey : MonoBehaviour
     {
         if (!enemyIsDead)
         {
-            Cursor.SetCursor(attackCursor, Vector2.zero, CursorMode.Auto);
+            SetCursor.instance.SetCursorTexture(SetCursor.attackCursor);
 
             enemyOutline.enabled = true;
             enemyOutline.OutlineWidth = 2;
             enemyOutline.OutlineColor = Color.red;
+            //Set outline
+            HighlightObject.instance.Highlight(enemy,enemyOutline);
         }
     }
     private void OnMouseExit()
     {
-        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+        SetCursor.instance.SetCursorTexture(SetCursor.defaultCursor);
         enemyOutline.enabled = false;
     }
 
-    private void OnMouseDown()
-    {
-        
-    }
 }

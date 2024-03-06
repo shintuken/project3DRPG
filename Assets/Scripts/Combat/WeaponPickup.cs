@@ -10,11 +10,18 @@ namespace RPG.Combat
         [SerializeField] Weapon weapon;
         [SerializeField] float respawnTime = 5f;
 
+        //Outline Enemy 
+        private Outline weaponOutline;
+
+        private void Start()
+        {
+            weaponOutline = GetComponent<Outline>();
+            weaponOutline.enabled = false;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
-
-            if(other.tag == "Player")
+            if (other.tag == "Player")
             {
                 other.GetComponent<Fighter>().EquipWeapon(weapon);
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.pickUpWeapon, this.transform.position);
@@ -37,6 +44,24 @@ namespace RPG.Combat
             {
                 transform.GetChild(i).gameObject.SetActive(shouldShow);
             }
+        }
+        //UPDATE OUTLINE 
+        void OnMouseOver()
+        {
+
+            SetCursor.instance.SetCursorTexture(SetCursor.CollectCursor);
+
+            weaponOutline.enabled = true;
+            weaponOutline.OutlineWidth = 3;
+            weaponOutline.OutlineColor = Color.green;
+            //Set outline
+            HighlightObject.instance.Highlight(this.gameObject, weaponOutline);
+
+        }
+        private void OnMouseExit()
+        {
+            SetCursor.instance.SetCursorTexture(SetCursor.defaultCursor);
+            weaponOutline.enabled = false;
         }
     }
 }

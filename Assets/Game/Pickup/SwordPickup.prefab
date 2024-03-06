@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716844891143691380, guid: 6a595f0e9f7cd1f4899c31fb1a247967, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7716844891143691380, guid: 6a595f0e9f7cd1f4899c31fb1a247967, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,6 +54,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716844891143691380, guid: 6a595f0e9f7cd1f4899c31fb1a247967, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126306931597646106, guid: 6a595f0e9f7cd1f4899c31fb1a247967, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126306931597646106, guid: 6a595f0e9f7cd1f4899c31fb1a247967, type: 3}
+      propertyPath: outlineMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126306931597646106, guid: 6a595f0e9f7cd1f4899c31fb1a247967, type: 3}
+      propertyPath: outlineWidth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126306931597646106, guid: 6a595f0e9f7cd1f4899c31fb1a247967, type: 3}
+      propertyPath: outlineColor.b
+      value: 0.288177
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126306931597646106, guid: 6a595f0e9f7cd1f4899c31fb1a247967, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126306931597646106, guid: 6a595f0e9f7cd1f4899c31fb1a247967, type: 3}
+      propertyPath: outlineColor.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

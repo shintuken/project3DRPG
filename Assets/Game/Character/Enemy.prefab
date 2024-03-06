@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 1
+  outlineMode: 3
   outlineColor: {r: 1, g: 0, b: 0, a: 1}
   outlineWidth: 0.22
   precomputeOutline: 0
@@ -1011,8 +1011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 89052718462677775}
-  defaultCursor: {fileID: 0}
-  attackCursor: {fileID: 0}
 --- !u!4 &630424239004706795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7662856576488500084, guid: f84b87b3100f6514db639a444459d9fe, type: 3}

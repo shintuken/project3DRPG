@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7716844891143691380}
   - component: {fileID: 528065795918672963}
   - component: {fileID: 6446228774121644861}
+  - component: {fileID: 2119445886537898948}
   m_Layer: 0
   m_Name: FireBallStaff
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 4024649747388919768}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &528065795918672963
 SphereCollider:
@@ -68,6 +69,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: a95ec8d9e0a0d154180f9adb7409f57b, type: 2}
+  respawnTime: 5
+--- !u!114 &2119445886537898948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182599052270795884}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &4024649747389020262
 PrefabInstance:
   m_ObjectHideFlags: 0
