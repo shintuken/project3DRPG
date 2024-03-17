@@ -13,8 +13,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button btnContinue;
     [SerializeField] private Button btnExit;
 
-    [SerializeField] private EventReference sfxBtnClick;
-    [SerializeField] private EventReference sfxBtnHover;
 
 
     private void Start()
@@ -23,7 +21,19 @@ public class MainMenu : MonoBehaviour
         btnOption.onClick.AddListener(MenuOption);
         btnContinue.onClick.AddListener(MenuContinue);
         btnExit.onClick.AddListener(MenuExit);
+
     }
+
+    public void ButtonCick()
+    {
+        AudioManager.instance.PlayOneShotNoPosition(MenuSound.instance.sfxBtnClick);
+    }
+
+    public void ButtonHover()
+    {
+        AudioManager.instance.PlayOneShotNoPosition(MenuSound.instance.sfxBtnHover);
+    }
+
 
     private void MenuExit()
     {
@@ -43,6 +53,9 @@ public class MainMenu : MonoBehaviour
 
     private void MenuNewGame()
     {
+        AudioManager.instance.StopSound(MenuSound.instance.sfxBtnClick);
+        AudioManager.instance.StopSound(MenuSound.instance.sfxBtnHover);
+        AudioManager.instance.StopSound(MenuSound.instance.menuBGM);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

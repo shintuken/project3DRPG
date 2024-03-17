@@ -289,15 +289,16 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
-  - 46fbfdf3fc43db0458918377fd40293e
-  - 2fea114e74ecf3c4f920e1d5cc1c4c40
-  - 52eb9df5db46521439908db3a29a1bbb
+  - de700ef3f37a49b58a57ae3addf01ad9
   - b7716510a1f36934c87976f3a81dbf3d
-  - 2c5177b11d81d824dbb064f9ac8527da
-  - 0f8eb3f400726694eb47beb1a9f94ce8
-  - c88d16e5272a4e241b0ef0ac2e53b73d
-  - e7a046c753c3c3d4aacc91f6597f310d
   - fd7c55dab0fce234b8c25f6ffca523c1
+  - 2c5177b11d81d824dbb064f9ac8527da
+  - 46fbfdf3fc43db0458918377fd40293e
+  - 0f8eb3f400726694eb47beb1a9f94ce8
+  - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - e7a046c753c3c3d4aacc91f6597f310d
+  - c88d16e5272a4e241b0ef0ac2e53b73d
+  - 52eb9df5db46521439908db3a29a1bbb
   codecChannels:
     Value: []
     HasValue: 0
@@ -447,6 +448,79 @@ MonoBehaviour:
   codecChannels:
     Value: []
     HasValue: 0
+--- !u!114 &-2171683819238198670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f591a193113347409efedcc618e83d6, type: 3}
+  m_Name: FMODStudioSettingsPlatform
+  m_EditorClassIdentifier: 
+  identifier: de700ef3f37a49b58a57ae3addf01ad9
+  parentIdentifier: default
+  active: 0
+  Properties:
+    LiveUpdate:
+      Value: 0
+      HasValue: 0
+    LiveUpdatePort:
+      Value: 0
+      HasValue: 0
+    Overlay:
+      Value: 0
+      HasValue: 0
+    OverlayPosition:
+      Value: 0
+      HasValue: 0
+    OverlayFontSize:
+      Value: 0
+      HasValue: 0
+    Logging:
+      Value: 0
+      HasValue: 0
+    SampleRate:
+      Value: 0
+      HasValue: 0
+    BuildDirectory:
+      Value: 
+      HasValue: 0
+    SpeakerMode:
+      Value: 0
+      HasValue: 0
+    VirtualChannelCount:
+      Value: 0
+      HasValue: 0
+    RealChannelCount:
+      Value: 0
+      HasValue: 0
+    DSPBufferLength:
+      Value: 0
+      HasValue: 0
+    DSPBufferCount:
+      Value: 0
+      HasValue: 0
+    Plugins:
+      Value: []
+      HasValue: 0
+    StaticPlugins:
+      Value: []
+      HasValue: 0
+    CallbackHandler:
+      Value: {fileID: 0}
+      HasValue: 0
+  OutputTypeName: 
+  threadAffinities:
+    Value: []
+    HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
+  codecChannels:
+    Value: []
+    HasValue: 0
 --- !u!114 &-1372242566703041365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,10 +607,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
+  HasSourceProject: 0
+  HasPlatforms: 0
   sourceProjectPath: ../Fmod project/audio_system_fmod_project_01/audio_system_fmod_project_01.fspro
-  sourceBankPath: ../Fmod project/audio_system_fmod_project_01/Build
+  sourceBankPath: Assets/Audio/FMOD/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -559,8 +633,7 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  Banks:
-  - SFX
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -572,22 +645,23 @@ MonoBehaviour:
   EnableErrorCallback: 0
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
-  CurrentVersion: 131616
+  CurrentVersion: 131617
   HideSetupWizard: 1
   LastEventReferenceScanVersion: 131616
   Platforms:
-  - {fileID: -5892235850520538818}
-  - {fileID: -5911648474920670585}
-  - {fileID: -3317604437125899972}
-  - {fileID: 777888663614280362}
-  - {fileID: 6566119416917104186}
+  - {fileID: -2171683819238198670}
   - {fileID: -8841127328253447068}
-  - {fileID: -7376464997117052995}
-  - {fileID: -1372242566703041365}
-  - {fileID: 5927133123005252741}
-  - {fileID: 2772971317886483034}
   - {fileID: -8743006212800358254}
-  MigratedPlatforms: 0500000012000000060000000b000000080000000a000000090000000c000000150000000200000001000000
+  - {fileID: -7376464997117052995}
+  - {fileID: -5911648474920670585}
+  - {fileID: -5892235850520538818}
+  - {fileID: -3317604437125899972}
+  - {fileID: -1372242566703041365}
+  - {fileID: 777888663614280362}
+  - {fileID: 2772971317886483034}
+  - {fileID: 5927133123005252741}
+  - {fileID: 6566119416917104186}
+  MigratedPlatforms: 0500000012000000060000000b000000080000000a000000090000000c00000015000000020000000100000000000000
 --- !u!114 &777888663614280362
 MonoBehaviour:
   m_ObjectHideFlags: 0

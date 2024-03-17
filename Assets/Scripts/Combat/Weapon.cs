@@ -1,5 +1,4 @@
 ﻿using RPG.Resources;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -34,7 +33,6 @@ namespace RPG.Combat
                 weaponInstance = Instantiate(equipedPrefab, handTransform);
             }
 
-            var overrideController = animator.runtimeAnimatorController as AnimatorController;
             //check if it unarmed or not, unarmed is default and set null variable
             if (overrideAnimator != null)
             {

@@ -1,5 +1,6 @@
 ﻿using RPG.Core;
 using RPG.Resources;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,16 @@ namespace RPG.Combat
 {
     public class Projectile : MonoBehaviour
     {
+        //[EVENT]
+        public event Action OnRangedHit;
+
         [SerializeField] private GameObject hitEffect = null;
         [SerializeField] private float projectileSpeed = 0.1f;
         //life time of a projecttile
         [SerializeField] private float maxLifeTime = 3f;
         [SerializeField] GameObject[] destroyOnHit = null;  
         [SerializeField] private float lifeAfterImpact = 2.5f;
+
 
 
         private GameObject blowEffectInstance;
@@ -76,6 +81,8 @@ namespace RPG.Combat
                     blowEffectInstance = Instantiate(hitEffect, GetAimPosition(), target.transform.rotation);
                 }
                 target.TakeDamage(damage);
+                //Gọi Event để truyền text damage
+                OnRangedHit?.Invoke();
 
                 projectileSpeed = 0;
 

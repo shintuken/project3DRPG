@@ -42,6 +42,7 @@ public class GameEnd : MonoBehaviour
 
     private void HandleDeath()
     {
+        //Nếu UI kia chưa xuất hiện thì mới hỉn thị
         if (!UIOtherScreen.isActiveAndEnabled)
         {
             // Gọi hàm hiển thị menu UI hoặc thực hiện các hành động khác khi nhân vật chết

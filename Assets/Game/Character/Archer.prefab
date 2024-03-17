@@ -61,6 +61,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 01b2546c969fe814794af634cb4534f4, type: 2}
     - target: {fileID: 5686675420066999625, guid: f8ac0d588a6ec6d4fb50e6b07d86b036, type: 3}
+      propertyPath: TextOffset
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686675420066999625, guid: f8ac0d588a6ec6d4fb50e6b07d86b036, type: 3}
       propertyPath: defaultWeapon
       value: 
       objectReference: {fileID: 11400000, guid: 380012da02a566947ae6bd52133151c0, type: 2}
@@ -68,6 +72,10 @@ PrefabInstance:
       propertyPath: defaultweapon
       value: 
       objectReference: {fileID: 11400000, guid: 0f7f89ba306b2434cbf1d4ba9993b456, type: 2}
+    - target: {fileID: 5686675420066999625, guid: f8ac0d588a6ec6d4fb50e6b07d86b036, type: 3}
+      propertyPath: dynamicTextData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b78e326a655a354883eb6f3a36070e7, type: 2}
     - target: {fileID: 5686675420066999625, guid: f8ac0d588a6ec6d4fb50e6b07d86b036, type: 3}
       propertyPath: defaultWeaponName
       value: Bow

@@ -736,6 +736,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: acdc333205cc7914e8e968df1d6af7f7, type: 2}
     - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
+      propertyPath: TextOffset
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6051859471410470442, guid: f84b87b3100f6514db639a444459d9fe, type: 3}
       propertyPath: handWeapon
       value: 
       objectReference: {fileID: 3110252370152376646}

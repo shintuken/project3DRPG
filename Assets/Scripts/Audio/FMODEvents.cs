@@ -11,6 +11,7 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Player Footstep SFX")]
     [field: SerializeField] public EventReference footstep { get; private set; }
 
+
     public static FMODEvents instance { get; private set; }
 
     private void Awake()
