@@ -80,6 +80,18 @@ public class GameEnd : MonoBehaviour
 
     }
 
+    public void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            LoadMenuScene();
+        }
+        if (Input.GetKeyUp(KeyCode.F2))
+        {
+            ResetGame();
+        }
+    }
+
     public void LoadMenuScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
