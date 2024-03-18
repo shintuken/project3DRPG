@@ -55,6 +55,21 @@ public class GameEnd : MonoBehaviour
         // Hiển thị menu UI khi nhân vật chết
         UIGameOver.enabled = true;
         playerController.enabled = false;
+
+        GameOverSound();
+    }
+
+    private void GameOverSound()
+    {
+        //AudioManager.instance.StopSound(FMODEvents.instance.bgmGameplay);
+        if (UIGameOver.gameObject.tag == "Win")
+        {
+            AudioManager.instance.PlayOneShotNoPosition(FMODEvents.instance.winSound);
+        }
+        else if (UIGameOver.gameObject.tag == "Lose")
+        {
+            AudioManager.instance.PlayOneShotNoPosition(FMODEvents.instance.loseSound);
+        }
     }
 
     public void ResetGame()
@@ -63,14 +78,12 @@ public class GameEnd : MonoBehaviour
         Loading.SetActive(true);
         loadingScreen.LoadScene(currentSceneIndex);
 
-
-
     }
 
     public void LoadMenuScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex - 1;
+        int nextSceneIndex = currentSceneIndex + 1;
 
         // Ghi lại scene hiện tại vào PlayerPrefs
         PlayerPrefs.SetInt("PreviousSceneIndex", currentSceneIndex);

@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
 
+    private EventInstance musicEventInstance;
+
     private void Awake()
     {
         if (instance != null)

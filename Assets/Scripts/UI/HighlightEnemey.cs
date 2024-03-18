@@ -27,6 +27,7 @@ public class HighlightEnemey : MonoBehaviour
 
     private void Handle_EnemyHealth()
     {
+        AudioManager.instance.PlayOneShotNoPosition(FMODEvents.instance.enemyDeath);
         enemyIsDead = true;
     }
 

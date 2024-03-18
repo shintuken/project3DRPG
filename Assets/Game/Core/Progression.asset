@@ -15,7 +15,7 @@ MonoBehaviour:
   characterClass:
   - characterClass: 0
     health:
-    - 300
+    - 150
     - 400
     - 500
     - 600
@@ -28,7 +28,7 @@ MonoBehaviour:
     - 60
   - characterClass: 4
     health:
-    - 100
+    - 550
     - 200
     - 300
     - 400

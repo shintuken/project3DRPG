@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
         AudioManager.instance.StopSound(MenuSound.instance.sfxBtnClick);
         AudioManager.instance.StopSound(MenuSound.instance.sfxBtnHover);
         AudioManager.instance.StopSound(MenuSound.instance.menuBGM);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
 }

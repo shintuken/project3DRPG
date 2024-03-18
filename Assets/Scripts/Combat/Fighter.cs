@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
-using EZCameraShake;
 using System;
 using RPG.Saving;
 using RPG.Resources;
@@ -44,14 +43,12 @@ namespace RPG.Combat
 
         private void Start()
         {
-
             if (currentWeapon == null)
             {
                 EquipWeapon(defaultWeapon);
             }
             hpBarTransform = transform.Find("HPBar");
         }
-
         //Update for GMT 
         public Weapon GetWeapon()
         {
@@ -147,6 +144,13 @@ namespace RPG.Combat
 
             }
             //Update Damage text UI
+            DamageTextUI();
+            //Play Weapon SOUND
+            PlayWeaponAttackSound();
+        }
+
+        private void DamageTextUI()
+        {
             if (hpBarTransform != null)
             {
                 Debug.Log("HPBAR not found");
@@ -157,8 +161,6 @@ namespace RPG.Combat
                 damageTextPosition = new Vector3(target.transform.position.x, target.transform.position.y + TextOffset, target.transform.position.z);
             }
             DynamicTextManager.CreateText(damageTextPosition, "-" + currentWeapon.GetWeaponDamage().ToString(), dynamicTextData);
-
-            PlayWeaponAttackSound();
         }
 
         private void PlayWeaponAttackSound()
