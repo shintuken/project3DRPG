@@ -11,6 +11,17 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Player Footstep SFX")]
     [field: SerializeField] public EventReference footstep { get; private set; }
 
+    [field: Header("Sword Attack")]
+    [field: SerializeField] public EventReference swordAtk { get; private set; }
+
+    [field: Header("Bow Attack")]
+    [field: SerializeField] public EventReference bowAtk { get; private set; }
+
+    [field: Header("Fireball Attack")]
+    [field: SerializeField] public EventReference fireballAtk { get; private set; }
+
+    [field: Header("Unarmed Attack")]
+    [field: SerializeField] public EventReference unarmedAtk { get; private set; }
 
     public static FMODEvents instance { get; private set; }
 

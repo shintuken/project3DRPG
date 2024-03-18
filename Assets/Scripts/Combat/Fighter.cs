@@ -28,6 +28,13 @@ namespace RPG.Combat
         private Vector3 damageTextPosition;
 
 
+        private const string Bow = "bow";
+        private const string FireBall = "firestaff";
+        private const string Sword = "sword";
+        private const string Unarmed = "unarmed";
+
+
+
         //Không cần dùng transform mà dùng trực tiếp Health để sử dụng 
         Health target;
         //Set infinity so when start object will attack immediately without waitting time
@@ -129,6 +136,7 @@ namespace RPG.Combat
             if (currentWeapon.HasProjectTile())
             {
                 currentWeapon.LaunchProjectile(righthandWeapon, lefthandWeapon, target);
+
             }
             //Melee weapon
             else
@@ -147,8 +155,32 @@ namespace RPG.Combat
             else
             {
                 damageTextPosition = new Vector3(target.transform.position.x, target.transform.position.y + TextOffset, target.transform.position.z);
-            }          
+            }
             DynamicTextManager.CreateText(damageTextPosition, "-" + currentWeapon.GetWeaponDamage().ToString(), dynamicTextData);
+
+            PlayWeaponAttackSound();
+        }
+
+        private void PlayWeaponAttackSound()
+        {
+            switch (currentWeapon.GetWeaponName())
+            {
+                case Sword:
+                    AudioManager.instance.PlayOneShotNoPosition(FMODEvents.instance.swordAtk);
+                    break;
+                case Bow:
+                    AudioManager.instance.PlayOneShotNoPosition(FMODEvents.instance.bowAtk);
+                    break;
+                case FireBall:
+                    AudioManager.instance.PlayOneShotNoPosition(FMODEvents.instance.fireballAtk);
+                    break;
+                case Unarmed:
+                    AudioManager.instance.PlayOneShotNoPosition(FMODEvents.instance.unarmedAtk);
+                    break;
+                default:
+                    AudioManager.instance.PlayOneShotNoPosition(FMODEvents.instance.unarmedAtk);
+                    break;
+            }
         }
 
 

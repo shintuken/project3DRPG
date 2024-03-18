@@ -6,6 +6,7 @@ namespace RPG.Combat
     [CreateAssetMenu(fileName ="Weapon", menuName = "Create new weapon", order = 0)]
     public class Weapon: ScriptableObject
     {
+        [SerializeField] private string weaponName = "null";
         //Prefab equipment
         [SerializeField] private GameObject equipedPrefab = null;
         //Animator equipment 
@@ -83,6 +84,11 @@ namespace RPG.Combat
         public float GetWeaponDamage()
         {
             return weaponDamage;
+        }
+
+        public string GetWeaponName()
+        {
+            return weaponName;
         }
 
         public void SetWeaponDamage(float damage)

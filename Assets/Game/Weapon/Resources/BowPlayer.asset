@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2cd6b88428e4b4d9642a4eebb38d31, type: 3}
   m_Name: BowPlayer
   m_EditorClassIdentifier: 
+  weaponName: bow
   equipedPrefab: {fileID: 7794957932665688394, guid: 23428eb4ecf15f447952c986345a5f2e, type: 3}
   overrideAnimator: {fileID: 22100000, guid: 54ad0f4f0e7279845972ce5d4640f609, type: 2}
   attackRange: 10

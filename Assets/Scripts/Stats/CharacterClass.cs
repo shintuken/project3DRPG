@@ -9,6 +9,7 @@ namespace RPG.Stat
         Player,
         Grunt,
         Mage, 
-        Archer 
+        Archer,
+        BOSS
     }
 }

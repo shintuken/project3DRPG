@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2cd6b88428e4b4d9642a4eebb38d31, type: 3}
   m_Name: FireStaff
   m_EditorClassIdentifier: 
+  weaponName: firestaff
   equipedPrefab: {fileID: 0}
   overrideAnimator: {fileID: 22100000, guid: 0c48aab7bf6fcbb4ca384575aab38213, type: 2}
   attackRange: 10
